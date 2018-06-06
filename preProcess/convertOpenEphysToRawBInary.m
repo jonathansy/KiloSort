@@ -5,7 +5,7 @@ fidout      = fopen(fname, 'w');
 %
 clear fs
 for j = 1:ops.Nchan
-   fs{j} = dir(fullfile(ops.root, sprintf('*100_CH%d_*.continuous', j) ));
+   fs{j} = dir(fullfile(ops.root, sprintf('100_CH%d.continuous', j) ));
 end
 nblocks = cellfun(@(x) numel(x), fs);
 if numel(unique(nblocks))>1

@@ -4,9 +4,7 @@ function master_kilosort_fun(location, kiloDir)
   addpath(genpath(kiloDir)) % path to kilosort folder
   addpath(genpath([kiloDir filesep 'npy-scripts'])) % path to npy-matlab scripts
 
-  configCmd = sprintf('%s%sconfigFiles%sconfig_file_fun(%s,%s)',...
-                      kiloDir, filesep, filesep, location, kiloDir);
-  [ops, dd] = feval(configCmd);
+  [ops, dd] = config_file_fun(location, kiloDir)
 
   tic; % start timer
 
